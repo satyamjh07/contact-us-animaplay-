@@ -2,166 +2,218 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Us</title>
-    <style>
-        body {
-            font-family: "Roboto", sans-serif;
-            background-image: url("https://fantasygallery.netlify.app/bg.jpg");
-            background-size: contain;
-            background-position: center;
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - AdultVerse</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* GLOBAL */
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background: #141414;
+      color: white;
+      overflow-x: hidden;
+    }
 
-        header {
-            background: url("https://fantasygallery.netlify.app/Guangqiao/00037-1669646102.jpeg") center/cover no-repeat;
-            color: #ffffff;
-            background-size: cover;
-            height: 20vh;
-            padding: 20px;
-            text-align: center;
-        }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-        header h1{
-            font-size: 5rem;
-            color: crimson;
-            text-shadow: 450px 50px 15px rgb(0, 0, 0);
-        }
+    /* HEADER */
+    header {
+      text-align: center;
+      padding: 30px 20px;
+      background: linear-gradient(to bottom, #141414 70%, transparent);
+    }
 
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #00aaff;
-            padding: 10px;
-        }
+    header h1 {
+      font-size: 48px;
+      color: #e50914;
+      margin: 0;
+    }
 
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            padding: 10px 20px;
-            margin: 0 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-            font-size: 16px;
-        }
+    /* NAVBAR */
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #1f1f1f;
+      padding: 12px 0;
+    }
 
-        nav a:hover {
-            background-color: #9b7171;
-        }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      font-size: 14px;
+    }
 
-        .container {
-            display: flex;
-            flex-direction: column;
-            width: 80%;
-            max-width: 800px;
-            background-color: #34495e;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-            margin: 20px auto;
-            padding: 20px;
-        }
+    nav a:hover {
+      background: #e50914;
+      color: #fff;
+    }
 
-        .left,
-        .right {
-            padding: 40px;
-        }
+    nav a.active {
+      background: #e50914;
+      color: white;
+    }
 
-        .left {
-            background-color: #3498db;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
+    /* MAIN CONTAINER */
+    .contact-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 40px;
+      padding: 40px 20px;
+      flex-wrap: wrap;
+    }
 
-        .left img {
-            width: 80%;
-            height: auto;
-        }
+    /* IMAGE CARD */
+    .contact-left {
+      flex: 1;
+      min-width: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-        .right {
-            background-color: rgb(177, 8, 42);
-        }
+    .contact-left img {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+    }
 
-        h1 {
-            margin-top: 0;
-            font-size: 36px;
-        }
+    /* FORM CARD */
+    .contact-right {
+      flex: 1;
+      min-width: 300px;
+      background: #181818;
+      padding: 30px 25px;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+    }
 
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-size: 18px;
-            color: white;
-        }
+    .contact-right h2 {
+      margin-top: 0;
+      margin-bottom: 25px;
+      font-size: 28px;
+      color: #e50914;
+      text-align: center;
+    }
 
-        input,
-        textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 20px;
-            border: none;
-            border-radius: 4px;
-            box-sizing: border-box;
-            font-size: 16px;
-        }
+    .contact-right form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
 
-        button {
-            background-color: #e74c3c;
-            color: #fff;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 18px;
-            transition: background-color 0.3s;
-        }
+    .contact-right label {
+      font-size: 14px;
+      color: #ccc;
+    }
 
-        button:hover {
-            background-color: #c0392b;
-        }
-    </style>
+    .contact-right input,
+    .contact-right textarea {
+      padding: 12px;
+      border-radius: 6px;
+      border: none;
+      background: #1f1f1f;
+      color: white;
+      font-size: 14px;
+      outline: none;
+      resize: vertical;
+    }
+
+    .contact-right input::placeholder,
+    .contact-right textarea::placeholder {
+      color: #aaa;
+    }
+
+    .contact-right button {
+      background: #e50914;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .contact-right button:hover {
+      background: #b20710;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .contact-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .contact-left,
+      .contact-right {
+        width: 90%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 36px;
+      }
+
+      .contact-right h2 {
+        font-size: 24px;
+      }
+
+      .contact-right input,
+      .contact-right textarea,
+      .contact-right button {
+        font-size: 14px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <header>
-        <h1>AdultVerse</h1>
-    </header>
+  <header>
+    <h1>AdultVerse</h1>
+  </header>
 
-    <nav>
-        <a href="https://adultverse.netlify.app/">Home</a>
-        <a href="#">Category</a>
-        <a href="#">Uncensored</a>
-        <a href="#" style="background-color: #555">Contact Us</a>
-    </nav>
+  <nav>
+    <a href="https://adultverse.netlify.app/">Home</a>
+    <a href="#">Category</a>
+    <a href="#">Uncensored</a>
+    <a href="#" class="active">Contact Us</a>
+  </nav>
 
-    <div class="container">
-        <div class="left">
-            <img src="https://fantasygallery.netlify.app/LenoreRaino/128.jpeg" alt="Banner">
-        </div>
-        <div class="right">
-            <h1>Contact Us</h1>
-            <form id="contactForm" netlify data-netlify-recaptcha="true">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+  <div class="contact-container">
+    <div class="contact-left">
+      <img src="https://fantasygallery.netlify.app/LenoreRaino/128.jpeg" alt="Banner">
+    </div>
+    <div class="contact-right">
+      <h2>Contact Us</h2>
+      <form id="contactForm" netlify data-netlify-recaptcha="true">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
 
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="6" required></textarea>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="6" placeholder="Your Message" required></textarea>
 
-                <div data-netlify-recaptcha="true"></div>
+        <div data-netlify-recaptcha="true"></div>
 
-                <button type="submit">Submit</button>
-            </form>
-        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
 </body>
 
 </html>
-
-
